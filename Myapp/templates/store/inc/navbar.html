@@ -1,0 +1,182 @@
+<nav class="navbar navbar-expand-lg bg-primary">
+   <div class="container">
+    <a class="navbar-brand" href="http://127.0.0.1:8000/home" style="margin-left: -100px;font-size: 23px;font-family:'Times New Roman', Times, serif;color:gold;">स्वस्तिक 卐 ट्रेडर्स</a>
+    <button class="navbar-toggler me-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" style="margin-left: -100px; color: brown;">
+    <span class="navbar-toggler-icon"></span>
+    </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="http://127.0.0.1:8000/home" style="color: white;font-family: 'Times New Roman', Times, serif;font-size: 20px;">Home</a>
+        </li>
+     
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: white;font-family: 'Times New Roman', Times, serif;font-size: 20px;">
+            Aboutus
+          </a>
+          <ul class="dropdown-menu"style="border-radius:2px; background:rgb(8, 14, 41);margin-top:7px;">
+            <li><a class="dropdown-item" style="color:Orange;font-family: 'Times New Roman', Times, serif; font-size: 20px;" href="#">Aboutus</a></li>
+            <li><a class="dropdown-item" style="color:Orange;font-family: 'Times New Roman', Times, serif;font-size: 20px;" href="#">Our Delerships</a></li>
+            <li><a class="dropdown-item" style="color:Orange;font-family: 'Times New Roman', Times, serif;font-size: 20px;" href="#">Our Firms</a></li>
+            <li><a class="dropdown-item" style="color:Orange;font-family: 'Times New Roman', Times, serif;font-size: 20px;" href="#">Our Fields</a></li>
+            
+          </ul>
+        </li>
+
+     
+     
+        <li class="nav-item">
+          <a class="nav-link" href="http://127.0.0.1:8000/collections" style="color: white;font-family: 'Times New Roman', Times, serif;font-size: 20px;">Collection</a>
+        </li>
+     
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: white;font-family: 'Times New Roman', Times, serif;font-size: 20px;">Account</a>
+          <ul class="dropdown-menu" style="border-radius:2px; background:rgb(8, 14, 41);margin-top:7px;">
+              {% if request.user.is_authenticated %}
+              <li><a class="dropdown-item" style="color:Orange;font-family: 'Times New Roman', Times, serif; font-size: 20px;" href="http://127.0.0.1:8000/logout/"> ➤
+                {{ request.user }}
+              </a></li>
+              {% else %}
+              <li><a class="dropdown-item" style="color:Orange;font-family: 'Times New Roman', Times, serif; font-size: 20px;" href="http://127.0.0.1:8000/Login/">Login</a></li>
+              <li><a class="dropdown-item" style="color:Orange;font-family: 'Times New Roman', Times, serif;font-size: 20px;" href="http://127.0.0.1:8000/register/#">Register</a></li>
+              {% endif %}
+          </ul>
+      </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#" style="color: white;font-size: 20px;font-family: 'Times New Roman', Times, serif;">Pricing</a>
+        </li>
+      
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: white;font-family: 'Times New Roman', Times, serif;font-size: 20px;">
+            Orders
+          </a>
+          <ul class="dropdown-menu"style="border-radius:2px; background:rgb(8, 14, 41);margin-top:7px">
+            <li><a class="dropdown-item" style="color:Orange;font-family: 'Times New Roman', Times, serif;font-size: 20px;" href="#">Wishlist</a></li>
+            <li><a class="dropdown-item" style="color:Orange;font-family: 'Times New Roman', Times, serif;font-size: 20px;" href="#">Cart</a></li>
+            <li><a class="dropdown-item" style="color:Orange;font-family: 'Times New Roman', Times, serif;font-size: 20px;" href="#">BookingItems</a></li>
+          
+          </ul>  
+          </li>
+          
+      </ul>
+      
+      <!-- Modified search form -->
+      <form class="d-flex" role="search" style="margin-left: 320px;">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" style="width: 400px;border-radius:2px;">
+        <button class="btn btn-outline-warning" type="submit" style="color: white;margin-left: -6px;border-radius: 2px;">Search</button>
+    </form>
+    
+      
+    </div>
+  </div>
+</nav>
+
+<div class="Banner">
+<a href="#">Handloom</a>  
+<a href="http://127.0.0.1:8000/collections/furniture">Furniture</a>  
+<a href="http://127.0.0.1:8000/collections/kitechenWare">KitchenWare</a>  
+<a href="http://127.0.0.1:8000/collections/Electronics">Electronics</a>  
+<a href="#">Moulded Furniture</a>  
+<a href="#">Bags</a>    
+<a href="#">GlassesUtsils</a>    
+<a href="http://127.0.0.1:8000/collections/home%20Appliances">HomeAppliences</a>    
+<a href="#">Steel Box</a>    
+
+<a href="#">NewItems</a>    
+<a href="#">Offers&gifts</a>    
+
+</div>
+
+<style>
+.Banner a{
+margin-left: 50px;
+color:white;
+text-decoration: none;
+margin-top: 100px;
+font-family: 'Times New Roman', Times, serif;
+font-size:18px;
+}
+
+.Banner a:hover{
+color:Black;
+background-color:goldenrod;
+padding: 5px;
+border-radius: 5px;
+box-shadow: 0px 0px 5px black;
+}
+.Banner{
+background-color:rgb(8, 14, 41);
+padding: 10px;
+box-shadow: 0px 0px 5px black;
+}
+
+</style>
+
+<div class="slide">
+<Marquee>हमारे शोरूम में नवीनतम इलेक्ट्रॉनिक्स, दिलकश हैंडलूम टेक्सटाइल्स, और अत्यंत सुंदर फर्नीचर डिज़ाइन का अन्वेषण करें। कटिंग-एज गैजेट्स, कारीगरी से बने कपड़े, और समयहीन फर्नीचर प्रतियों के साथ अपने स्थान को उन्नत करें। एक ही स्थान पर नवाचार, कारीगरी, और शैली का अनुभव करें। आज ही हमारे चुने हुए विकल्पों के साथ अपने जीवनशैली को अपग्रेड करें!</Marquee>
+</div>
+
+<style>
+.slide{
+background-color:black;
+box-shadow: 0px 0px 5px black;
+width: 1600px;
+}
+
+Marquee{
+font-size: 14px;
+font-family: 'Times New Roman', Times, serif;
+color:goldenrod;
+margin-top:5px;
+;
+}
+
+.navbar {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000; /* Ensure it's above other content */
+}
+
+.Banner {
+  position: fixed;
+  top: 60px; /* Adjust according to the height of your navbar */
+  width: 100%;
+  z-index: 999; /* Ensure it's below the navbar */
+}
+
+.slide {
+  margin-top: 107px; /* Adjust according to the height of your navbar and banner */
+  
+}
+
+::-webkit-scrollbar{
+    width: 0px;
+
+}
+::-webkit-scrollbar-track{
+    background-color:black;
+    width: 1px;
+  }
+::-webkit-scrollbar-thumb{
+    background: linear-gradient(120deg, rgba(187, 72, 19, 0.7), rgba(176, 194, 11, 0.5), rgba(44, 126, 51, 0.9));
+    border-radius: 50px;
+
+  }
+
+  @media (max-width: 768px) {
+    .navbar-brand {
+        margin-left: 0;
+    }
+    .navbar-toggler {
+        margin-left: 0;
+    }
+    .collapse {
+        margin-left: 0;
+    }
+    .slide {
+        margin-top: 145px;
+    }
+}
+</style>

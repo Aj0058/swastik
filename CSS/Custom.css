@@ -1,0 +1,10 @@
+.form-control {
+    width: 300px; /* Adjust width as needed */
+    margin-right: 10px; /* Add some space between input and button */
+    
+}
+
+/* Style for search button */
+.btn {
+    min-width: 80px; /* Set minimum width for button */
+}

@@ -1,0 +1,49 @@
+{% extends 'store/layouts/main.html' %}
+
+{% block content %}
+
+<div class="py-3 bg-warning" style="width: 1600px;">
+    <div class="container">
+        <a class="text-Dark" style="color: black; text-decoration: none; font-size: 20px;font-family: 'Times New Roman', Times, serif;" href="http://127.0.0.1:8000/home">Home /</a>
+        <a class="text-Dark" style="color: black;text-decoration: none;font-size: 20px;font-family: 'Times New Roman', Times, serif;" href="http://127.0.0.1:8000/collections">Collection /</a>
+        <a class="text-Dark" style="color: black;text-decoration: none;font-size: 20px;font-family: 'Times New Roman', Times, serif;" href="http://127.0.0.1:8000/collectionsview">{{category_name.name}}</a>
+    </div>
+</div>
+
+<style>
+    .card {
+        width: 280px;
+        height: 390px;
+        margin: 50px;
+    }
+</style>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h1 style="font-family: 'Times New Roman', Times, serif;margin-top: 20px;">{{ category_name.name }}</h1>
+            <hr>
+            <div class="row">
+                {% for item in products %}
+                    <div class="col-md-3">
+                        <div class="card Card shadow"style="border-radius:1px;border:ridge;border-width:1px;">
+                            <a style="text-decoration: none;" href="{% url 'productview' item.Category.slug item.slug %}">
+                                <div class="card-body">
+                                    <div class="category-image">
+                                        
+                                        <img src="{{ item.Product_image.url }}" alt="Product image" class="w-100"/>
+                                    </div>        
+                                    <h4 class="text-center" style="font-family: 'Times New Roman', Times, serif;text-decoration: none;">{{ item.name }}</h4>
+                                    <span class="float-start">Original Rs.{{ item.Orignal_Price|stringformat:'d' }}</span>
+                                    <span class="float-end">Selling Rs.{{ item.Selling_Price|stringformat:'d' }}</span>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

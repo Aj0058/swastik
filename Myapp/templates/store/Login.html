@@ -1,0 +1,48 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link href="{% static 'css/Custom.css' %}" rel="stylesheet"> 
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+    <title>Create The Account</title>
+</head>
+<body>
+    <div class="container">
+        <div class="row justify-content-center mt-5">
+            <div class="col-md-4">
+                <div class="Logo">
+                    <a href="http://127.0.0.1:8000/home" class="logo" style="font-family: 'Times New Roman', Times, serif;text-decoration: none;font-size: 27px;color: goldenrod;margin-left:120px;">स्वस्तिक 卐 ट्रेडर्स</a>
+                </div>
+                <div class="Card shadow p-5 mt-3">
+                    <form method="POST" class="needs-validation" novalidate>
+                        {% csrf_token %}
+                        <h3 class="mb-4" style="font-family: 'Times New Roman', Times, serif;margin-left:80px;">Create Account</h3>
+                        <hr style="color: blue;">
+                        <div class="mb-3">
+                            <label for="Name" class="form-label" style="font-family: 'Times New Roman', Times, serif;">Name</label>
+                            <input type="text" class="form-control" id="Name" name="name" placeholder="Your Name" required>
+                            <div class="valid-feedback">Looks good!</div>
+                            <div class="invalid-feedback">Please enter your username.</div>
+                        </div>
+
+
+                        <div class="mb-3">
+                            <label for="password" class="form-label" style="font-family: 'Times New Roman', Times, serif;">Password</label>
+                            <input type="password" class="form-control" id="password" name="password" placeholder="Your Password" required>
+                            <div class="valid-feedback">Looks good!</div>
+                            <div class="invalid-feedback">Please enter your password.</div>
+                        </div>
+
+
+                        <button type="submit" class="btn btn-primary mt-3 mb-3" style="font-family: 'Times New Roman', Times, serif;width:50%;margin-left:70px;">Login</button>
+                    </form>
+                    <p class="mt-3" style="font-family: 'Times New Roman', Times, serif;font-size: large;">You dont Have Account? <a href="http://127.0.0.1:8000/register/">Create Account</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
